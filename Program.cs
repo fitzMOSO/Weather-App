@@ -1,12 +1,16 @@
 using Weather_App.Models;
+using Weather_App.Services;
+using Weather_App.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.Configure<OpenWeatherMapSettings>(
-    builder.Configuration.GetSection("OpenWeatherMap"));
+    builder.Configuration.GetSection("OpenWeatherMap")
+);
 
+builder.Services.AddScoped<IWeatherService, WeatherService>();
 
 var app = builder.Build();
 
@@ -25,10 +29,7 @@ app.UseAuthorization();
 
 app.MapStaticAssets();
 
-app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}")
+app.MapControllerRoute(name: "default", pattern: "{controller=Home}/{action=Index}/{id?}")
     .WithStaticAssets();
-
 
 app.Run();
