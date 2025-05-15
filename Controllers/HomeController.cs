@@ -1,7 +1,8 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using Weather_App.Models;
 using Weather_App.Services.Interfaces;
+using Weather_App.ViewModel;
 
 namespace Weather_App.Controllers;
 
@@ -31,25 +32,8 @@ public class HomeController(ILogger<HomeController> logger, IWeatherService weat
     [HttpPost]
     public async Task<IActionResult> GetWeather(string city, string format)
     {
-        var weather = await weatherService.GetWeatherAsync(city, format);
-
-        if (weather == null)
-        {
-            ViewData["WeatherData"] = "No data found or error retrieving weather.";
-        }
-        else
-        {
-            // For now, just show the raw data as JSON or XML string
-            if (format == "json")
-            {
-                ViewData["WeatherData"] = weather;
-            }
-            else // xml
-            {
-                ViewData["WeatherData"] = weather;
-            }
-        }
-
-        return View("Index");
+        var weatherData = await weatherService.GetWeatherAsync(city, format);
+        var viewModel = new HomeIndexViewModel { WeatherData = weatherData, DataFormat = format };
+        return PartialView("_WeatherResult", viewModel);
     }
 }
