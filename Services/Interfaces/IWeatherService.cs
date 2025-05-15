@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Weather_App.Models;
 
-namespace Weather_App.Services.Interfaces
+namespace Weather_App.Services.Interface
 {
     public interface IWeatherService
     {

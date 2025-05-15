@@ -4,57 +4,58 @@ using System.Xml.Serialization;
 public class XMLWeatherDetail
 {
     [XmlElement("city")]
-    public City City { get; set; }
+    public City? City { get; set; }
 
     [XmlElement("temperature")]
-    public Temperature Temperature { get; set; }
+    public Temperature? Temperature { get; set; }
 
     [XmlElement("feels_like")]
-    public FeelsLike FeelsLike { get; set; }
+    public FeelsLike? FeelsLike { get; set; }
 
     [XmlElement("humidity")]
-    public Humidity Humidity { get; set; }
+    public Humidity? Humidity { get; set; }
 
     [XmlElement("pressure")]
-    public Pressure Pressure { get; set; }
+    public Pressure? Pressure { get; set; }
 
     [XmlElement("wind")]
-    public Wind Wind { get; set; }
+    public Wind? Wind { get; set; }
 
     [XmlElement("clouds")]
-    public Clouds Clouds { get; set; }
+    public Clouds? Clouds { get; set; }
 
     [XmlElement("visibility")]
-    public Visibility Visibility { get; set; }
+    public Visibility? Visibility { get; set; }
 
     [XmlElement("precipitation")]
-    public Precipitation Precipitation { get; set; }
+    public Precipitation? Precipitation { get; set; }
 
     [XmlElement("weather")]
-    public WeatherDescription Weather { get; set; }
+    public WeatherDescription? Weather { get; set; }
 
     [XmlElement("lastupdate")]
-    public LastUpdate LastUpdate { get; set; }
+    public LastUpdate? LastUpdate { get; set; }
 }
+
 public class City
 {
     [XmlAttribute("id")]
     public int Id { get; set; }
 
     [XmlAttribute("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 
     [XmlElement("coord")]
-    public Coord Coord { get; set; }
+    public Coord? Coord { get; set; }
 
     [XmlElement("country")]
-    public string Country { get; set; }
+    public string? Country { get; set; }
 
     [XmlElement("timezone")]
     public int Timezone { get; set; }
 
     [XmlElement("sun")]
-    public Sun Sun { get; set; }
+    public Sun? Sun { get; set; }
 }
 
 public class Coord
@@ -87,7 +88,7 @@ public class Temperature
     public float Max { get; set; }
 
     [XmlAttribute("unit")]
-    public string Unit { get; set; }
+    public string? Unit { get; set; }
 }
 
 public class FeelsLike
@@ -96,7 +97,7 @@ public class FeelsLike
     public float Value { get; set; }
 
     [XmlAttribute("unit")]
-    public string Unit { get; set; }
+    public string? Unit { get; set; }
 }
 
 public class Humidity
@@ -105,7 +106,7 @@ public class Humidity
     public int Value { get; set; }
 
     [XmlAttribute("unit")]
-    public string Unit { get; set; }
+    public string? Unit { get; set; }
 }
 
 public class Pressure
@@ -114,19 +115,19 @@ public class Pressure
     public int Value { get; set; }
 
     [XmlAttribute("unit")]
-    public string Unit { get; set; }
+    public string? Unit { get; set; }
 }
 
 public class Wind
 {
     [XmlElement("speed")]
-    public WindSpeed Speed { get; set; }
+    public WindSpeed? Speed { get; set; }
 
     [XmlElement("gusts")]
-    public Gusts Gusts { get; set; }
+    public Gusts? Gusts { get; set; }
 
     [XmlElement("direction")]
-    public WindDirection Direction { get; set; }
+    public WindDirection? Direction { get; set; }
 }
 
 public class WindSpeed
@@ -135,10 +136,10 @@ public class WindSpeed
     public float Value { get; set; }
 
     [XmlAttribute("unit")]
-    public string Unit { get; set; }
+    public string? Unit { get; set; }
 
     [XmlAttribute("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }
 
 public class Gusts
@@ -153,10 +154,10 @@ public class WindDirection
     public int Value { get; set; }
 
     [XmlAttribute("code")]
-    public string Code { get; set; }
+    public string? Code { get; set; }
 
     [XmlAttribute("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }
 
 public class Clouds
@@ -165,7 +166,7 @@ public class Clouds
     public int Value { get; set; }
 
     [XmlAttribute("name")]
-    public string Name { get; set; }
+    public string? Name { get; set; }
 }
 
 public class Visibility
@@ -177,7 +178,7 @@ public class Visibility
 public class Precipitation
 {
     [XmlAttribute("mode")]
-    public string Mode { get; set; }
+    public string? Mode { get; set; }
 }
 
 public class WeatherDescription
@@ -186,14 +187,14 @@ public class WeatherDescription
     public int Number { get; set; }
 
     [XmlAttribute("value")]
-    public string Value { get; set; }
+    public string? Value { get; set; }
 
     [XmlAttribute("icon")]
-    public string Icon { get; set; }
+    public string? Icon { get; set; }
 }
 
 public class LastUpdate
 {
     [XmlAttribute("value")]
-    public string Value { get; set; }
+    public string? Value { get; set; }
 }

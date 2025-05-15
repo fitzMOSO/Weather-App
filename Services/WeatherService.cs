@@ -2,23 +2,25 @@
 using System.Text.Json.Serialization;
 using System.Xml.Serialization;
 using Weather_App.Models;
-using Weather_App.Services.Interfaces;
+using Weather_App.Services.Interface;
 
 namespace Weather_App.Services
 {
     public class WeatherService(IConfiguration configuration) : IWeatherService
     {
         private readonly HttpClient _httpClient = new();
-        private readonly string _apiKey = configuration["OpenWeatherMap:ApiKey"]
-                                          ?? throw new ArgumentNullException(
-                                              nameof(configuration),
-                                              "OpenWeatherMap:ApiKey is not configured"
-                                          );
-        private readonly string _baseUrl = configuration["OpenWeatherMap:BaseUrl"]
-                                           ?? throw new ArgumentNullException(
-                                               nameof(configuration),
-                                               "OpenWeatherMap:BaseUrl is not configured"
-                                           );
+        private readonly string _apiKey =
+            configuration["OpenWeatherMap:ApiKey"]
+            ?? throw new ArgumentNullException(
+                nameof(configuration),
+                "OpenWeatherMap:ApiKey is not configured"
+            );
+        private readonly string _baseUrl =
+            configuration["OpenWeatherMap:BaseUrl"]
+            ?? throw new ArgumentNullException(
+                nameof(configuration),
+                "OpenWeatherMap:BaseUrl is not configured"
+            );
         private readonly JsonSerializerOptions _jsonOptions = new()
         {
             PropertyNameCaseInsensitive = true,

@@ -5,28 +5,28 @@ namespace Weather_App.Models
     public class JsonWeatherDetail
     {
         [JsonPropertyName("name")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
 
         [JsonPropertyName("id")]
         public int Id { get; set; }
 
         [JsonPropertyName("coord")]
-        public JsonCoord Coord { get; set; }
+        public JsonCoord? Coord { get; set; }
 
         [JsonPropertyName("main")]
-        public JsonMain Main { get; set; }
+        public JsonMain? Main { get; set; }
 
         [JsonPropertyName("weather")]
         public List<JsonWeather> Weather { get; set; }
 
         [JsonPropertyName("wind")]
-        public JsonWind Wind { get; set; }
+        public JsonWind? Wind { get; set; }
 
         [JsonPropertyName("clouds")]
-        public JsonClouds Clouds { get; set; }
+        public JsonClouds? Clouds { get; set; }
 
         [JsonPropertyName("sys")]
-        public JsonSys Sys { get; set; }
+        public JsonSys? Sys { get; set; }
 
         [JsonPropertyName("visibility")]
         public int Visibility { get; set; }
@@ -35,7 +35,7 @@ namespace Weather_App.Models
         public int Timezone { get; set; }
 
         [JsonPropertyName("base")]
-        public string Base { get; set; }
+        public string? Base { get; set; }
 
         [JsonPropertyName("cod")]
         public int Cod { get; set; }
@@ -83,13 +83,13 @@ namespace Weather_App.Models
         public int Id { get; set; }
 
         [JsonPropertyName("main")]
-        public string Main { get; set; }
+        public string? Main { get; set; }
 
         [JsonPropertyName("description")]
-        public string Description { get; set; }
+        public string? Description { get; set; }
 
         [JsonPropertyName("icon")]
-        public string Icon { get; set; }
+        public string? Icon { get; set; }
     }
 
     public class JsonWind
@@ -113,7 +113,7 @@ namespace Weather_App.Models
     public class JsonSys
     {
         [JsonPropertyName("country")]
-        public string Country { get; set; }
+        public string? Country { get; set; }
 
         [JsonPropertyName("sunrise")]
         public long Sunrise { get; set; }

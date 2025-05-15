@@ -1,0 +1,56 @@
+﻿@model Weather_App.ViewModel.HomeIndexViewModel?
+
+@if (Model?.WeatherData == null)
+{
+    <div class="alert alert-warning">No weather data found.</div>
+}
+else
+{
+    <table class="table-striped table">
+        <thead>
+            <tr>
+                <th>Property</th>
+                <th>Value</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td>Data Format</td>
+                <td>@Model.DataFormat</td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>@Model.CityName</td>
+            </tr>
+            <tr>
+                <td>City ID</td>
+                <td>@Model.CityId</td>
+            </tr>
+            <tr>
+                <td>Country</td>
+                <td>@Model.Country</td>
+            </tr>
+            <tr>
+                <td>Temperature</td>
+                <td>@Model.Temperature</td>
+            </tr>
+            <tr>
+                <td>Feels Like</td>
+                <td>@Model.FeelsLikeTemp</td>
+            </tr>
+            <tr>
+                <td>Humidity</td>
+                <td>@Model.Humidity</td>
+            </tr>
+            <tr>
+                <td>Pressure</td>
+                <td>@Model.Pressure</td>
+            </tr>
+            <tr>
+                <td>Weather</td>
+                <td>@Model.WeatherDescription</td>
+            </tr>
+        </tbody>
+    </table>
+}

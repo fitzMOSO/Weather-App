@@ -1,6 +1,6 @@
 using Weather_App.Models;
 using Weather_App.Services;
-using Weather_App.Services.Interfaces;
+using Weather_App.Services.Interface;
 
 var builder = WebApplication.CreateBuilder(args);
 
