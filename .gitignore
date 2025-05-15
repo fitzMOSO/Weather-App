@@ -1,0 +1,114 @@
+# .NET Core build folders and artifacts
+[Bb]in/
+[Oo]bj/
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+
+# Visual Studio files and folders
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.userprefs
+*.suo
+*.cache
+*.csproj.user
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+*.sass-cache
+
+# IDE files
+.vscode/
+.idea/
+*.sln.iml
+.project
+.settings
+
+# Build results and logs
+[Bb]uild[Ll]og.*
+*.[Pp]ublish.xml
+*.azurePubxml
+*.pubxml
+*.publishproj
+orleans.codegen.cs
+msbuild.*log
+*.log
+*.vspscc
+*.vssscc
+.builds
+
+# NuGet
+packages/
+*.nupkg
+*.snupkg
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Development configuration files
+appsettings.Development.json
+*.Development.json
+launchSettings.json
+
+# Client-side libraries
+wwwroot/lib/**/*
+!wwwroot/lib/**/LICENSE*
+!wwwroot/lib/**/license*
+node_modules/
+bower_components/
+**/wwwroot/lib/bootstrap/
+**/wwwroot/lib/jquery/
+**/wwwroot/lib/jquery-validation/
+**/wwwroot/lib/jquery-validation-unobtrusive/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*~
+*.swp
+*.bak
+*.tmp
+
+# .NET Core
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio for Mac
+.vscode/
+.idea/
+*.userprefs
+mono_crash.*
+
+# Rider
+.idea/
+*.sln.iml
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Windows
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+.fake
