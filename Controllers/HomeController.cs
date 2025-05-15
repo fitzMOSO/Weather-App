@@ -1,5 +1,5 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
 using Weather_App.Models;
 using Weather_App.Services.Interface;
 using Weather_App.ViewModel;
@@ -29,5 +29,10 @@ public class HomeController(ILogger<HomeController> logger, IWeatherService weat
         var weatherData = await weatherService.GetWeatherAsync(city, format);
         var viewModel = new HomeIndexViewModel { WeatherData = weatherData, DataFormat = format };
         return PartialView("_WeatherResult", viewModel);
+    }
+
+    public IActionResult GetRawWeather()
+    {
+        throw new NotImplementedException();
     }
 }

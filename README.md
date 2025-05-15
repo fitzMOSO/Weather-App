@@ -5,24 +5,28 @@ This is a .NET-based Weather Application that demonstrates the implementation of
 ## Object-Oriented Programming Implementation
 
 ### 1. Encapsulation
+
 - **Implementation**: The application uses proper data encapsulation through models and viewmodels
 - **Location**: `/Models` and `/ViewModel` directories
 - **Purpose**: Data and behavior are bundled together, with internal state protected from unauthorized access
 - **Example**: Weather-related data models encapsulate their properties with proper access modifiers
 
 ### 2. Inheritance
+
 - **Implementation**: Utilizes class inheritance for extending base functionality
 - **Location**: `/Controllers` and `/Services` directories
 - **Purpose**: Promotes code reuse and establishes "is-a" relationships
 - **Example**: Controllers inherit from base Controller class, providing common functionality
 
 ### 3. Polymorphism
+
 - **Implementation**: Interface-based polymorphism through service interfaces
 - **Location**: `/Services/Interfaces` directory
 - **Purpose**: Enables different implementations of the same interface, allowing for flexibility and testability
 - **Example**: Weather service implementations can be swapped without changing dependent code
 
 ### 4. Abstraction
+
 - **Implementation**: Abstract interfaces and service layers hiding implementation details
 - **Location**: `/Services/Interfaces` directory
 - **Purpose**: Hides complex implementation details and exposes only necessary features
@@ -34,15 +38,18 @@ This is a .NET-based Weather Application that demonstrates the implementation of
 
 The application uses `appsettings.json` for configuration management for several reasons:
 
-1. **Built-in Support**: 
+1. **Built-in Support**:
+
    - ASP.NET Core's configuration system natively supports JSON configuration files
    - Seamless integration with dependency injection
 
 2. **Environment-Specific Configuration**:
+
    - Supports different settings for development, staging, and production
    - Easy to override settings using environment variables
 
 3. **Security Considerations**:
+
    - `appsettings.json` should be added to `.gitignore` for production environments
    - Secrets can be managed using Azure Key Vault or similar services in production
    - Development secrets can be stored in `appsettings.Development.json`
@@ -71,10 +78,49 @@ Weather-App/
 2. Update `appsettings.json` with your API keys
 3. Run the application using `dotnet run`
 
+## Production Build
+
+### Release Configuration
+
+1. Clean the solution:
+
+   ```bash
+   dotnet clean
+   ```
+
+2. Build in Release mode:
+
+   ```bash
+   dotnet build --configuration Release
+   ```
+
+3. Publish the application:
+   ```bash
+   dotnet publish --configuration Release --output ./publish
+   ```
+
+### Release Build Benefits
+
+- Optimized code execution
+- Removal of debug symbols
+- Smaller deployment size
+- Better performance
+- Just-In-Time (JIT) compilation optimizations
+
+### Pre-deployment Checklist
+
+1. Verify all debug/development settings are disabled
+2. Ensure logging levels are appropriate for production
+3. Check all production connection strings
+4. Validate HTTPS configuration
+5. Review and update application pool settings
+6. Perform security scanning of dependencies
+
 ## Security Note
 
 For production deployment:
+
 1. Never commit sensitive data to source control
 2. Use secure secret management solutions
 3. Consider using Azure Key Vault or similar services
-4. Use environment variables for sensitive configuration in production 
+4. Use environment variables for sensitive configuration in production

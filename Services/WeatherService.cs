@@ -71,6 +71,8 @@ namespace Weather_App.Services
 
         private JsonWeatherDetail? DeserializeJson(string content)
         {
+
+
             return JsonSerializer.Deserialize<JsonWeatherDetail>(content, _jsonOptions);
         }
 
