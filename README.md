@@ -116,6 +116,66 @@ Weather-App/
 5. Review and update application pool settings
 6. Perform security scanning of dependencies
 
+## Environment Configuration
+
+### Setting Environment
+
+1. Development (uses `appsettings.Development.json`):
+
+   ```bash
+   set ASPNETCORE_ENVIRONMENT=Development  # Windows CMD
+   $env:ASPNETCORE_ENVIRONMENT="Development"  # Windows PowerShell
+   export ASPNETCORE_ENVIRONMENT=Development  # Linux/macOS
+   ```
+
+2. Production (uses `appsettings.json`):
+   ```bash
+   set ASPNETCORE_ENVIRONMENT=Production  # Windows CMD
+   $env:ASPNETCORE_ENVIRONMENT="Production"  # Windows PowerShell
+   export ASPNETCORE_ENVIRONMENT=Production  # Linux/macOS
+   ```
+
+### Build Configuration
+
+1. Command Line:
+
+   ```bash
+   dotnet build --configuration Release  # Uses Production settings
+   dotnet build --configuration Debug    # Uses Development settings
+   ```
+
+2. Visual Studio:
+   - Debug mode: Uses `appsettings.Development.json`
+   - Release mode: Uses `appsettings.json`
+
+### Publishing with Specific Configuration
+
+```bash
+# Publish with Release configuration (Production)
+dotnet publish --configuration Release --output ./publish
+
+# Publish with specific environment
+dotnet publish --configuration Release /p:EnvironmentName=Staging --output ./publish
+```
+
+### Configuration Precedence
+
+1. Environment Variables
+2. appsettings.{Environment}.json
+3. appsettings.json
+4. Default values in code
+
+### Best Practices
+
+1. Keep sensitive data in:
+   - User Secrets (Development)
+   - Azure Key Vault (Production)
+   - Environment Variables
+2. Version control:
+   - Commit `appsettings.json` with default values
+   - Ignore `appsettings.Development.json`
+   - Ignore `appsettings.Production.json`
+
 ## Security Note
 
 For production deployment:
